@@ -8,7 +8,7 @@ androidxComposeCompiler = "1.5.1"
 androidxCore = "1.13.1"
 androidxLifecycle = "2.8.3"
 androidxActivity = "1.9.0"
-androidxComposeUi = "1.6.8"
+androidxComposeUi = "1.10.0"
 androidxComposeMaterial = "1.2.1"
 accompanistSystemUiController = "0.30.1"
 
