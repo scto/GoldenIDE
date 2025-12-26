@@ -6,7 +6,7 @@ spotless = "6.25.0"
 androidxComposeCompiler = "1.5.1"
 
 androidxCore = "1.13.1"
-androidxLifecycle = "2.8.3"
+androidxLifecycle = "2.10.0"
 androidxActivity = "1.9.0"
 androidxComposeUi = "1.6.8"
 androidxComposeMaterial = "1.2.1"
