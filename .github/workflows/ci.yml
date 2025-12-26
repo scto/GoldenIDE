@@ -31,15 +31,15 @@ jobs:
           java-version: 17
           distribution: 'temurin'
           cache: gradle
-
-      - name: ⚙️ Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
-
+      
       - name: Give permission to executable
         run: chmod +x gradlew
         
+      - name: ⚙️ Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+
       - name: 🧼 Run Spotless Check
-        run: ./gradlew spotlessCheck --no-configuration-cache
+        run: bash ./gradlew spotlessCheck --no-configuration-cache
 
   build:
     name: 🏗️ Build & Compile
@@ -62,20 +62,20 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: ⚙️ Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
-
       - name: Give permission to executable
         run: chmod +x gradlew
         
+      - name: ⚙️ Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+        
       - name: 🧹 Clean Project
-        run: ./gradlew clean
+        run: bash ./gradlew clean
 
       - name: 🔨 Build Project
-        run: ./gradlew build
+        run: bash ./gradlew build
 
       - name: 🔨 Generate APK
-        run: ./gradlew assembledebug
+        run: bash ./gradlew assembledebug
 
       - name: ⤴️ Upload APK
         uses: actions/upload-artifact@master
