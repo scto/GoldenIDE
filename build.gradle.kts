@@ -13,15 +13,45 @@ subprojects {
     configure<com.diffplug.gradle.spotless.SpotlessExtension> {
         kotlin {
             target("**/*.kt")
-            targetExclude("${layout}.getBuildDirectory()/**/*.kt")
-
-            ktlint()
+            targetExclude("**/build/**/*.kt")
+            ktlint(ktlintVersion).editorConfigOverride(
+                mapOf(
+                    "android" to "true",
+                ),
+            ).customRuleSets(
+                listOf(
+                    "io.nlopez.compose.rules:ktlint:0.4.27",
+                ),
+            )
             licenseHeaderFile(rootProject.file("spotless/copyright.kt"))
         }
-
-        kotlinGradle {
-            target("*.gradle.kts")
-            ktlint()
+        groovy {
+            target("**/*.gradle")
+            targetExclude("**/build/**/*.gradle")
+            // Look for the first line that doesn't have a block comment (assumed to be the license)
+            licenseHeaderFile(
+                rootProject.file("spotless/copyright.gradle"),
+                  "(^(?![\\/ ]\\*).*$)",
+            )
+        }
+        format("kts") {
+            target("**/*.kts")
+            targetExclude("**/build/**/*.kts")
+            // Look for the first line that doesn't have a block comment (assumed to be the license)
+            licenseHeaderFile(
+                rootProject.file(
+                    "spotless/copyright.kts"), "(^(?![\\/ ]\\*).*$)"
+            )
+        }
+        format("xml") {
+            target("**/*.xml")
+            targetExclude(
+                "**/build/**/*.xml"
+            )
+            // Look for the first XML tag that isn't a comment (<!--) or the xml declaration (<?xml)
+            licenseHeaderFile(
+                rootProject.file("spotless/copyright.xml"), "(<[^!?])"
+            )
         }
     }
 

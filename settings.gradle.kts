@@ -20,5 +20,10 @@ dependencyResolutionManagement {
         maven ("https://jitpack.io")
     }
 }
-rootProject.name = "New Empty Compose App"
-include ("app")
+
+rootProject.name = "GoldenIDE"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+include (":app")
+include (":buildutils:buildutils")

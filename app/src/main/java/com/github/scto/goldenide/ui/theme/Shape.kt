@@ -1,5 +1,5 @@
 /*
- * Copyright $YEAR Thomas Schmid
+ * Copyright 2025 Thomas Schmid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,3 +14,11 @@
  * limitations under the License.
  */
 
+package com.github.scto.goldenide.ui.theme
+
+import androidx.compose.material3.Shapes
+
+val Shapes =
+    Shapes(
+        // Override CornerBasedShape Here
+    )

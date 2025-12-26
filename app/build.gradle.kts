@@ -30,19 +30,24 @@ android {
             )
         }
     }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    
     buildFeatures {
         compose = true
     }
+    
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
     }
+    
     packaging {
         resources {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
@@ -63,5 +68,6 @@ dependencies {
 
     implementation(libs.androidx.splash.screen)
 
-    implementation(libs.vinchamp77.buildutils)
+    implementation(project(":buildutils:buildutils"))
+    //implementation(libs.vinchamp77.buildutils)
 }
