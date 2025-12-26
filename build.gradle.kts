@@ -9,6 +9,8 @@ plugins {
 }
 
 subprojects {
+    val ktlintVersion = "1.6.0"
+
     apply(plugin = "com.diffplug.spotless")
     configure<com.diffplug.gradle.spotless.SpotlessExtension> {
         kotlin {
