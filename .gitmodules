@@ -1,3 +1,3 @@
 [submodule "buildutils"]
 	path = buildutils
-	url = https://github.com/scto/buildutils
+	url = https://github.com/scto/buildutils.git
