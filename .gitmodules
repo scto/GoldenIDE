@@ -1,0 +1,3 @@
+[submodule "buildurils"]
+	path = buildurils
+	url = https://github.com/scto/buildutils
